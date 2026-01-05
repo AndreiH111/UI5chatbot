@@ -1,0 +1,21 @@
+{
+    "build": {
+        "target": "."
+    },
+    "server": {
+        "impl": "./srv/index.ts",
+        "port": 4004
+    },
+    "requires":{
+        "middlewares":true
+    },
+    "features":{
+        "serve_on_root": true
+    },
+    "log": {
+        "levels" :{
+            "cds": "info",
+            "app": "info"
+        }
+    }
+}

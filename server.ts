@@ -1,9 +1,14 @@
-import express from "express";
-import type { Request, Response } from "express";
+import cds from '@sap/cds'
+import type { Request, Response , Application} from "express";
 
-const app = express();
+cds.on('bootstrap', (app: Application) => {
+  app.get("/", (req: Request, res: Response) => {
+    res.send("Hello, World!");
+  });
+  console.log("Hi");
+})
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, World!");
-});
-export default app;
+export default cds.server;
+
+
+
